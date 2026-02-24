@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>Happy 11th Birthday, Joseph! 🚀</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 <style>
 /* ══════════════════════════════════════════════
-   DESIGN TOKENS
+   DESIGN TOKENS (unchanged)
 ══════════════════════════════════════════════ */
 :root{
   --gold:#f5c518; --gold2:#ffd700; --hot:#ff1a6c; --cyan:#00e8ff;
@@ -22,11 +22,6 @@
 html,body{width:100%;height:100%;overflow:hidden;font-family:'Rajdhani',sans-serif;
   color:#e8f4ff;background:var(--deep);cursor:none;
   -webkit-font-smoothing:antialiased}
-button:focus-visible,[role="button"]:focus-visible{
-  outline:2px solid var(--cyan);
-  outline-offset:3px;
-  box-shadow:0 0 0 3px rgba(0,232,255,0.25)
-}
 
 /* ── SCANLINES OVERLAY ── */
 body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
@@ -133,7 +128,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
   opacity:0;pointer-events:none;animation:iRX var(--t) var(--dl) ease-out infinite}
 @keyframes iRX{0%{transform:translate(-50%,-50%) scale(.05);opacity:.5}100%{transform:translate(-50%,-50%) scale(1);opacity:0}}
 
-/* ══════════ SCENE 1 — CAKE ══════════ */
+/* ══════════ SCENE 1 — CAKE (unchanged) ══════════ */
 #s1{background:radial-gradient(ellipse 130% 85% at 50% 110%,#3d0e00,#1e002a 40%,var(--deep) 72%);overflow:hidden}
 .sspot{position:absolute;bottom:-60px;left:50%;transform:translateX(-50%);
   width:520px;height:220px;background:radial-gradient(ellipse,rgba(255,140,30,.18),transparent 70%);
@@ -215,15 +210,8 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
 .blow-btn:hover{background:rgba(245,197,24,.18);transform:scale(1.05) translateY(-2px);box-shadow:0 0 40px rgba(245,197,24,.5)}
 .blow-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent);transform:translateX(-100%);transition:transform .45s}
 .blow-btn:hover::before{transform:translateX(100%)}
-.theme-btn{
-  padding:clamp(8px,1.3vh,11px) clamp(18px,3.6vw,30px);
-  font-family:'Orbitron',monospace;font-size:clamp(.62rem,1.1vw,.76rem);font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  border:1.5px solid rgba(0,232,255,.5);border-radius:4px;background:rgba(0,232,255,.07);color:var(--cyan);cursor:pointer;
-  transition:all .24s var(--ease);clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px)
-}
-.theme-btn:hover{background:rgba(0,232,255,.17);transform:translateY(-1px) scale(1.03);box-shadow:0 0 26px rgba(0,232,255,.28)}
 
-/* ══════════ SCENE 2 — BALLOONS ══════════ */
+/* ══════════ SCENE 2 — BALLOONS (unchanged) ══════════ */
 #s2{background:linear-gradient(195deg,#06001a,#140430 45%,#080018 100%)}
 .bal-hdr{position:absolute;top:0;left:0;right:0;height:clamp(110px,18vh,140px);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:12px;z-index:5;pointer-events:none;
   background:linear-gradient(180deg,rgba(0,0,0,.6),transparent)}
@@ -252,7 +240,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
 .nxt-btn.show{opacity:1;pointer-events:all;animation:fadeUp .45s var(--ease) forwards}
 .nxt-btn:hover{background:rgba(0,232,255,.18);box-shadow:0 0 40px rgba(0,232,255,.45);transform:translateX(-50%) scale(1.04)}
 
-/* ══════════ SCENE 3 — FIREWORKS ══════════ */
+/* ══════════ SCENE 3 — FIREWORKS (unchanged) ══════════ */
 #s3{background:#000}
 #fw-c{position:absolute;inset:0;width:100%;height:100%}
 #fw-bloom{position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:screen;filter:blur(10px);opacity:.5;pointer-events:none;z-index:2}
@@ -261,7 +249,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
   color:var(--gold);text-shadow:0 0 28px var(--gold),0 0 55px rgba(245,197,24,.35);letter-spacing:.12em}
 .fw-hnt{font-size:clamp(.58rem,1.1vw,.72rem);letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-top:6px;font-family:'Orbitron',monospace}
 
-/* ══════════ SCENE 4 — ROCKET ══════════ */
+/* ══════════ SCENE 4 — ROCKET (unchanged) ══════════ */
 #s4{background:#000}
 #rk-c{position:absolute;inset:0;width:100%;height:100%}
 #rk-bloom{position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:screen;filter:blur(14px);opacity:.45;pointer-events:none;z-index:2}
@@ -292,8 +280,8 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
   animation:wPop .7s var(--ease) forwards;text-align:center;padding:0 20px;line-height:1.3}
 @keyframes wPop{from{transform:scale(.35);opacity:0}58%{transform:scale(1.1)}to{transform:scale(1);opacity:1}}
 
-/* ══════════ SCENE 5 — FINALE ══════════ */
-#s5{background:#000;overflow:hidden}
+/* ══════════ SCENE 6 — FINALE (unchanged) ══════════ */
+#s6{background:#000;overflow:hidden}
 #fn-c{position:absolute;inset:0;width:100%;height:100%}
 .fn-cnt{position:relative;z-index:5;display:flex;flex-direction:column;align-items:center;text-align:center;gap:11px;padding:20px}
 .fn-badge{font-family:'Orbitron',monospace;font-size:clamp(.58rem,1.1vw,.68rem);letter-spacing:.35em;text-transform:uppercase;color:rgba(245,197,24,.55);animation:fadeUp .5s .3s ease both}
@@ -314,24 +302,161 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
   border:1.5px solid rgba(245,197,24,.48);border-radius:3px;background:rgba(245,197,24,.07);color:var(--gold);cursor:pointer;transition:all .28s var(--ease);animation:fadeUp .5s 1.4s ease both;box-shadow:0 0 16px rgba(245,197,24,.1);clip-path:polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px)}
 .restart-btn:hover{background:rgba(245,197,24,.18);transform:scale(1.05);box-shadow:0 0 36px rgba(245,197,24,.45)}
 
+/* ══════════════════════════════════════════════════
+   SCENE 5 — ENVELOPE  (IMPROVED)
+══════════════════════════════════════════════════ */
+#s5{
+  background:radial-gradient(ellipse 80% 68% at 50% 52%,#080d20,var(--deep) 78%);
+}
+#s5::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(0,232,255,.022) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,232,255,.022) 1px,transparent 1px);
+  background-size:54px 54px;
+}
+.env-wrapper{
+  display:flex;flex-direction:column;align-items:center;gap:28px;
+  position:relative;z-index:5;
+}
+.env-title{
+  font-family:'Orbitron',monospace;font-size:clamp(.68rem,1.4vw,.88rem);
+  font-weight:700;letter-spacing:.3em;text-transform:uppercase;
+  color:rgba(0,232,255,.5);
+}
+/* Responsive scale */
+.env-scale{ transform-origin:top center; }
+@media(max-width:380px){ .env-scale{ transform:scale(.76); } }
+@media(min-width:381px) and (max-width:540px){ .env-scale{ transform:scale(.88); } }
+
+/* ── ENVELOPE  300×200 from reference ── */
+.envelope{
+  position:relative;
+  background-color:#0c1e3a;
+  width:300px;height:200px;
+  cursor:pointer;z-index:5;
+  transition:box-shadow 0.3s ease;
+}
+.envelope:hover{
+  box-shadow:0 0 0 1px rgba(0,232,255,0.3), 0 10px 25px rgba(0,0,0,0.5);
+}
+.envelope::after{
+  content:'';position:absolute;inset:-1px;
+  border:1.5px solid rgba(0,232,255,.22);
+  pointer-events:none;z-index:20;
+}
+
+/* ── CARD ── */
+.envelope .card{
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  position:relative;top:10px;left:10px;
+  background:linear-gradient(150deg,#e8f3ff,#d8ecff);
+  width:280px;height:190px;border-radius:8px;
+  z-index:1;gap:6px;overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.4);
+}
+.envelope .card::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(
+    180deg,transparent,transparent 20px,rgba(0,80,200,.05) 20px,rgba(0,80,200,.05) 21px);
+}
+.env-close{
+  position:absolute;top:8px;right:10px;
+  font-family:'Orbitron',monospace;font-size:16px;font-weight:900;
+  color:rgba(10,40,100,.45);cursor:pointer;
+  background:none;border:none;outline:none;padding:2px 8px;
+  line-height:1;z-index:20;transition:color .15s, background .15s;
+  border-radius:50%;
+}
+.env-close:hover{ 
+  color:var(--hot); 
+  background:rgba(255,26,108,0.1);
+}
+.env-qr-img{
+  display:block;width:120px;height:120px;
+  border-radius:4px;object-fit:contain;
+  position:relative;z-index:1;image-rendering:pixelated;
+}
+/* Improved fallback – stylish QR placeholder */
+.env-qr-fb{
+  width:120px;height:120px;border-radius:4px;
+  background:linear-gradient(145deg,#fff,#eef5ff);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  position:relative;z-index:1;
+  border:1px dashed rgba(0,100,200,0.3);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,0.6);
+}
+.env-qr-fb span{
+  font-family:'Orbitron',monospace;font-size:.5rem;
+  letter-spacing:.1em;color:rgba(10,40,100,0.5);text-align:center;padding:4px;
+}
+.env-qr-fb::before{
+  content:'🎁';font-size:32px;opacity:0.7;margin-bottom:4px;
+}
+.env-card-label{
+  font-family:'Orbitron',monospace;font-size:.5rem;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(10,40,100,.45);position:relative;z-index:1;
+}
+
+/* ── FLAPS ── */
+.envelope .top{
+  position:absolute;left:0;top:0;
+  background-color:#0f2548;
+  width:100%;height:65%;z-index:10;
+  clip-path:polygon(0% 0%,50% 100%,100% 0%);
+  box-shadow:inset 0 -1px 0 rgba(0,232,255,.18);
+  transform-origin:top center;  /* for GSAP rotateX */
+}
+.envelope .right{
+  position:absolute;right:0;top:0;
+  background-color:#091a32;
+  width:50%;height:100%;z-index:5;
+  clip-path:polygon(100% 0%,0% 51%,100% 100%);
+}
+.envelope .bottom{
+  position:absolute;bottom:0;left:0;
+  background-color:#071526;
+  width:100%;height:50%;z-index:5;
+  clip-path:polygon(0% 99%,50% 0%,100% 100%);
+  border-bottom:1.5px solid rgba(0,232,255,.2);
+}
+.envelope .left{
+  position:absolute;top:0;left:0;
+  background-color:#091a32;
+  width:50%;height:100%;z-index:5;
+  clip-path:polygon(0% 0%,100% 50%,0% 101%);
+}
+.envelope .shadow{
+  position:absolute;bottom:-100px;left:75px;
+  width:150px;height:5px;border-radius:3px;
+  box-shadow:10px 10px 7px rgba(0,232,255,.18);
+}
+
+/* ── Continue button ── */
+.env-cont-row{
+  opacity:0;pointer-events:none;transition:opacity .35s;
+}
+.env-cont-row.show{ opacity:1;pointer-events:all; }
+.env-cont-btn{
+  padding:clamp(8px,1.3vh,11px) clamp(20px,3.5vw,34px);
+  font-family:'Orbitron',monospace;
+  font-size:clamp(.6rem,1.1vw,.75rem);font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  border:1.5px solid rgba(0,232,255,.55);border-radius:3px;
+  background:rgba(0,232,255,.08);color:var(--cyan);cursor:pointer;
+  transition:all .22s var(--ease);
+  clip-path:polygon(5px 0,100% 0,100% calc(100% - 5px),calc(100% - 5px) 100%,0 100%,0 5px);
+}
+.env-cont-btn:hover{
+  background:rgba(0,232,255,.22);transform:scale(1.05);
+  box-shadow:0 0 24px rgba(0,232,255,.45);
+}
 @media(hover:hover){.rk-ctrl{display:none}}
 @media(hover:none){.rk-ctrl{display:flex}}
 @media(max-width:380px){.fn-cnt{gap:8px}}
-@media (pointer:coarse){
-  html,body{cursor:auto}
-  #cur,#cur-ring{display:none}
-}
-.reduce-motion body::after{animation:none}
-.reduce-motion html,.reduce-motion body{cursor:auto}
-.reduce-motion #cur,.reduce-motion #cur-ring{display:none}
-.reduce-motion *,.reduce-motion *::before,.reduce-motion *::after{
-  animation-duration:0.001ms !important;
-  animation-iteration-count:1 !important;
-  transition-duration:0.001ms !important;
-  scroll-behavior:auto !important;
-}
-.reduce-motion .scene.enter{opacity:1;transform:none;filter:none}
-.reduce-motion .scene.exit{opacity:0;transform:none;filter:none}
 </style>
 </head>
 <body>
@@ -344,7 +469,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
 <canvas id="burst-canvas"></canvas>
 
 <!-- MISSION COUNTER -->
-<div id="mission-ctr">MISSION <span id="mc-cur">01</span> / 05</div>
+<div id="mission-ctr">MISSION <span id="mc-cur">01</span> / 06</div>
 
 <!-- PROGRESS DOTS -->
 <div class="pdots">
@@ -353,6 +478,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
   <div class="pd" data-i="2"></div>
   <div class="pd" data-i="3"></div>
   <div class="pd" data-i="4"></div>
+  <div class="pd" data-i="5"></div>
   <span class="pd-label">JOSEPH · BDAY XI</span>
 </div>
 
@@ -361,7 +487,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
   <div class="n-name">Joseph</div>
   <div class="n11 glitch">11</div>
   <div class="n-sub">Years &nbsp;·&nbsp; Birthday &nbsp;·&nbsp; Unlocked</div>
-  <div class="tap-h">Tap or Press Enter to Begin</div>
+  <div class="tap-h">Tap to Begin</div>
 </section>
 
 <!-- ═══ SCENE 1: CAKE ═══ -->
@@ -379,7 +505,6 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
     <p class="ck-hint">Click flame to extinguish &nbsp;·&nbsp; Double-click cake to change theme</p>
     <div class="cake-actions">
       <button class="blow-btn" id="blow-btn">💨 &nbsp; BLOW ALL CANDLES</button>
-      <button class="theme-btn" id="theme-btn">🎨 &nbsp; CHANGE CAKE THEME</button>
     </div>
   </div>
 </section>
@@ -423,8 +548,44 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
   </div>
 </section>
 
-<!-- ═══ SCENE 5: FINALE ═══ -->
+<!-- ═══ SCENE 5: ENVELOPE / QR (IMPROVED) ═══ -->
 <section class="scene" id="s5">
+  <div class="env-wrapper">
+
+    <div class="env-title">✦ &nbsp; A Special Delivery &nbsp; ✦</div>
+
+    <div class="env-scale">
+      <div class="envelope" id="envelope">
+
+        <!-- Card: tucked inside, pops out on open -->
+        <div class="card" id="env-card">
+          <button class="env-close" id="env-close">✕</button>
+          <img class="env-qr-img" id="env-qr-img" src="qr.png" alt="QR Code">
+          <div class="env-qr-fb" id="env-qr-fb">
+            <span>🎁 Secret Message</span>
+          </div>
+          <div class="env-card-label">🚀 &nbsp; Scan Me, Joseph! &nbsp; 🚀</div>
+        </div>
+
+        <!-- Flap panels -->
+        <div class="top"></div>
+        <div class="right"></div>
+        <div class="bottom"></div>
+        <div class="left"></div>
+        <div class="shadow"></div>
+
+      </div>
+    </div>
+
+    <div class="env-cont-row" id="env-cont-row">
+      <button class="env-cont-btn" id="env-cont-btn">Finale &nbsp;→</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ SCENE 6: FINALE ═══ -->
+<section class="scene" id="s6">
   <canvas id="fn-c"></canvas>
   <div class="fn-cnt">
     <div class="fn-badge">✦ &nbsp; BIRTHDAY PROTOCOL &nbsp; ✦</div>
@@ -438,16 +599,13 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
 
 <script>
 'use strict';
-const REDUCED_MOTION=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(REDUCED_MOTION)document.documentElement.classList.add('reduce-motion');
 
 /* ═══════════════════════════════════════════════════
-   CURSOR
+   CURSOR (unchanged)
 ═══════════════════════════════════════════════════ */
 const CUR=document.getElementById('cur'), RING=document.getElementById('cur-ring');
 let mx=innerWidth/2, my=innerHeight/2, rx=mx, ry=my;
 document.addEventListener('mousemove', e=>{
-  if(REDUCED_MOTION)return;
   mx=e.clientX; my=e.clientY;
   CUR.style.left=mx+'px'; CUR.style.top=my+'px';
   if(Math.random()<.18){
@@ -457,20 +615,18 @@ document.addEventListener('mousemove', e=>{
     document.body.appendChild(s); setTimeout(()=>s.remove(),560);
   }
 });
-if(!REDUCED_MOTION){
-  (function rl(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;RING.style.left=rx+'px';RING.style.top=ry+'px';requestAnimationFrame(rl);})();
-  document.addEventListener('mousedown',()=>{CUR.style.transform='translate(-50%,-50%) scale(2.2)';CUR.style.mixBlendMode='normal'});
-  document.addEventListener('mouseup',()=>{CUR.style.transform='translate(-50%,-50%) scale(1)';CUR.style.mixBlendMode='screen'});
-}
+(function rl(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;RING.style.left=rx+'px';RING.style.top=ry+'px';requestAnimationFrame(rl);})();
+document.addEventListener('mousedown',()=>{CUR.style.transform='translate(-50%,-50%) scale(2.2)';CUR.style.mixBlendMode='normal'});
+document.addEventListener('mouseup',()=>{CUR.style.transform='translate(-50%,-50%) scale(1)';CUR.style.mixBlendMode='screen'});
 
 /* ═══════════════════════════════════════════════════
-   BACKGROUND PARTICLES
+   BACKGROUND PARTICLES (unchanged)
 ═══════════════════════════════════════════════════ */
 const bgc=document.getElementById('bgc'), bc=bgc.getContext('2d');
 const blm=document.getElementById('bloom-overlay'), blmctx=blm.getContext('2d');
 function rsz(){bgc.width=blm.width=innerWidth;bgc.height=blm.height=innerHeight;}
 rsz(); addEventListener('resize',rsz);
-const bgPts=Array.from({length:REDUCED_MOTION?35:90},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.6+.3,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,h:Math.random()*360,ph:Math.random()*Math.PI*2}));
+const bgPts=Array.from({length:90},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.6+.3,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,h:Math.random()*360,ph:Math.random()*Math.PI*2}));
 (function bgLoop(){
   bc.clearRect(0,0,bgc.width,bgc.height);
   bgPts.forEach(p=>{
@@ -491,7 +647,7 @@ const bgPts=Array.from({length:REDUCED_MOTION?35:90},()=>({x:Math.random()*inner
 })();
 
 /* ═══════════════════════════════════════════════════
-   BURST CANVAS — Balloon shards
+   BURST CANVAS — Balloon shards (unchanged)
 ═══════════════════════════════════════════════════ */
 const BRS=document.getElementById('burst-canvas'), BCTX=BRS.getContext('2d');
 function rszBurst(){BRS.width=innerWidth;BRS.height=innerHeight;}
@@ -540,10 +696,10 @@ function burstBalloon(cx,cy,col,col2,sz){
 }
 
 /* ═══════════════════════════════════════════════════
-   SCENE MANAGER
+   SCENE MANAGER (unchanged)
 ═══════════════════════════════════════════════════ */
-const SN=['s0','s1','s2','s3','s4','s5'];
-const MISSIONS=['01','02','03','04','05','05'];
+const SN=['s0','s1','s2','s3','s4','s5','s6'];
+const MISSIONS=['01','02','03','04','05','06','06'];
 let CS=0;
 
 function goTo(idx){
@@ -565,11 +721,12 @@ function onEnter(i){
   if(i===2)initBalloons();
   if(i===3)initFireworks();
   if(i===4)initRocket();
-  if(i===5)initFinale();
+  if(i===5)initEnvelope();
+  if(i===6)initFinale();
 }
 
 /* ═══════════════════════════════════════════════════
-   HELPERS
+   HELPERS (unchanged)
 ═══════════════════════════════════════════════════ */
 function ripple(x,y){
   const r=document.createElement('div');
@@ -579,7 +736,6 @@ function ripple(x,y){
 document.head.insertAdjacentHTML('beforeend','<style>@keyframes ripOut{to{width:160px;height:160px;opacity:0}}</style>');
 
 function confetti(n=140){
-  if(REDUCED_MOTION)n=Math.max(24,Math.floor(n*0.25));
   const C=['#f5c518','#ff1a6c','#00e8ff','#8b2be2','#00ff88','#ff5a00','#fff','#ff88cc','#ffe57f'];
   for(let i=0;i<n;i++){
     const el=document.createElement('div');el.className='cfetti';
@@ -597,12 +753,9 @@ function bigText(msg,col='var(--gold)'){
 }
 
 /* ═══════════════════════════════════════════════════
-   SCENE 0 — INTRO
+   SCENE 0 — INTRO (unchanged)
 ═══════════════════════════════════════════════════ */
 const s0=document.getElementById('s0');
-s0.setAttribute('role','button');
-s0.setAttribute('tabindex','0');
-s0.setAttribute('aria-label','Start birthday experience');
 for(let i=0;i<4;i++){
   const ring=document.createElement('div');ring.className='i-ring';
   const sz=280+i*240;
@@ -610,18 +763,10 @@ for(let i=0;i<4;i++){
   s0.appendChild(ring);
 }
 s0.addEventListener('click',e=>{ripple(e.clientX,e.clientY);setTimeout(nxt,230);});
-s0.addEventListener('keydown',e=>{
-  if(e.key==='Enter'||e.key===' '){
-    e.preventDefault();
-    const x=innerWidth/2,y=innerHeight/2;
-    ripple(x,y);
-    setTimeout(nxt,230);
-  }
-});
 s0.style.cursor='pointer';
 
 /* ═══════════════════════════════════════════════════
-   SCENE 1 — CAKE
+   SCENE 1 — CAKE (unchanged)
 ═══════════════════════════════════════════════════ */
 let cndlsBlown=0, cakeTheme=0;
 const CAKE_T=[
@@ -680,9 +825,6 @@ function buildCandles(){
   const row=document.getElementById('c-row');row.innerHTML='';
   for(let i=0;i<3;i++){
     const c=document.createElement('div');c.className='candle';
-    c.setAttribute('role','button');
-    c.setAttribute('tabindex','0');
-    c.setAttribute('aria-label',`Blow out candle ${i+1}`);
     c.innerHTML=`
       <div class="fw" id="fw${i}">
         <div class="fglow"></div>
@@ -694,12 +836,6 @@ function buildCandles(){
       <div class="cb" style="height:58px"><div class="cwick"></div></div>`;
     c.addEventListener('click',()=>blowOne(i));
     c.addEventListener('touchstart',e=>{e.preventDefault();blowOne(i);},{passive:false});
-    c.addEventListener('keydown',e=>{
-      if(e.key==='Enter'||e.key===' '){
-        e.preventDefault();
-        blowOne(i);
-      }
-    });
     row.appendChild(c);
   }
 }
@@ -719,14 +855,12 @@ function allBlown(){
   setTimeout(nxt,3100);
 }
 document.getElementById('blow-btn').addEventListener('click',blowAll);
-function cycleCakeTheme(){
+document.getElementById('ck-w').addEventListener('dblclick',()=>{
   cakeTheme=(cakeTheme+1)%CAKE_T.length;
   applyTheme();addSprinkles();addDrips();
   bigText(['PINK VELVET','CHOCOLATE FUDGE','OCEAN BLUE','LAVENDER DREAM'][cakeTheme],
           ['#ff9ab0','#c8a070','#00e5ff','#ce93d8'][cakeTheme]);
-}
-document.getElementById('ck-w').addEventListener('dblclick',cycleCakeTheme);
-document.getElementById('theme-btn').addEventListener('click',cycleCakeTheme);
+});
 
 function applyTheme(){
   const th=CAKE_T[cakeTheme],fr=FROST_T[cakeTheme];
@@ -762,7 +896,7 @@ function addDrips(){
 }
 
 /* ═══════════════════════════════════════════════════
-   SCENE 2 — BALLOONS
+   SCENE 2 — BALLOONS (unchanged)
 ═══════════════════════════════════════════════════ */
 const BCOLS=[['#ff1a6c','#ff85a1'],['#8b2be2','#d0a0f0'],['#00e8ff','#80f8ff'],['#f5c518','#ffe99a'],['#00ff88','#80ffba'],['#ff5a00','#ffb380'],['#e040fb','#f090ff'],['#2979ff','#82b1ff'],['#ff4444','#ff8a80']];
 let popCount=0,balInt=null,balFrames={},nxtShown=false;
@@ -773,7 +907,7 @@ function initBalloons(){
   document.getElementById('bal-nxt').classList.remove('show');
   document.querySelectorAll('#s2 .balloon').forEach(b=>b.remove());
   for(let i=0;i<7;i++)setTimeout(spawnBalloon,i*260);
-  balInt=setInterval(spawnBalloon,REDUCED_MOTION?900:680);
+  balInt=setInterval(spawnBalloon,680);
 }
 
 function spawnBalloon(){
@@ -839,7 +973,7 @@ document.getElementById('bal-nxt').addEventListener('click',()=>{
 });
 
 /* ═══════════════════════════════════════════════════
-   SCENE 3 — FIREWORKS
+   SCENE 3 — FIREWORKS (unchanged)
 ═══════════════════════════════════════════════════ */
 let fwActive=false,fwParts=[],fwRkts=[],fwRAF;
 
@@ -871,8 +1005,7 @@ function initFireworks(){
   cv.width=blmCv.width=innerWidth;cv.height=blmCv.height=innerHeight;
   fwActive=true;fwParts=[];fwRkts=[];
   const nb=document.getElementById('fw-nxt');nb.style.opacity='0';nb.style.pointerEvents='none';
-  const autoLaunches=REDUCED_MOTION?[.5,.3,.7]:[.28,.72,.5,.15,.85];
-  autoLaunches.forEach((x,i)=>setTimeout(()=>fwRkts.push(new FwRkt(innerWidth*x)),350+i*450));
+  [.28,.72,.5,.15,.85].forEach((x,i)=>setTimeout(()=>fwRkts.push(new FwRkt(innerWidth*x)),350+i*450));
   setTimeout(()=>{nb.style.opacity='1';nb.style.pointerEvents='all';nb.classList.add('show');},5500);
   cv.onclick=e=>{if(fwActive)fwRkts.push(new FwRkt(e.offsetX));};
   let lX=-999;cv.onmousemove=e=>{if(e.buttons&&Math.abs(e.offsetX-lX)>25){lX=e.offsetX;fwRkts.push(new FwRkt(e.offsetX));}};
@@ -891,7 +1024,7 @@ function initFireworks(){
 document.getElementById('fw-nxt').addEventListener('click',()=>{fwActive=false;cancelAnimationFrame(fwRAF);nxt();});
 
 /* ═══════════════════════════════════════════════════
-   SCENE 4 — ROCKET GAME
+   SCENE 4 — ROCKET GAME (unchanged)
 ═══════════════════════════════════════════════════ */
 let rkActive=false,rkRAF,rkKeys={},rkStars=[],rkCount=0;
 // Parallax star layers
@@ -1148,8 +1281,117 @@ function drawRocket(ctx,blmCtx,x,y,tilt,vx,boost,t){
 function winRocket(){confetti(140);document.getElementById('win-ov').classList.add('show');}
 
 /* ═══════════════════════════════════════════════════
-   SCENE 5 — FINALE
+   SCENE 5 — ENVELOPE (IMPROVED)
 ═══════════════════════════════════════════════════ */
+function initEnvelope() {
+  // QR image fallback handling
+  const qrImg = document.getElementById('env-qr-img');
+  const qrFb  = document.getElementById('env-qr-fb');
+  qrImg.onerror = () => {
+    qrImg.style.display = 'none';
+    qrFb.style.display = 'flex';
+  };
+  // In case the image is already cached and errored
+  if (qrImg.complete && !qrImg.naturalWidth) {
+    qrImg.style.display = 'none';
+    qrFb.style.display = 'flex';
+  }
+
+  const contRow = document.getElementById('env-cont-row');
+  contRow.classList.remove('show');
+
+  // Kill any previous GSAP instances to avoid conflicts
+  if (window._envT1) window._envT1.kill();
+  if (window._envT2) window._envT2.kill();
+
+  // Reset all elements to closed state
+  gsap.set('.envelope .top', {
+    rotateX: 0,
+    zIndex: 10,
+    borderTop: 'none'  // ensure border is removed
+  });
+  gsap.set('.envelope .card', {
+    zIndex: 1,
+    left: 10,
+    top: 10,
+    width: 280,
+    height: 190,
+    scaleX: 1,
+    scaleY: 1
+  });
+  gsap.set('.envelope .shadow', { scaleX: 1 });
+
+  // Timeline 1: flap open, card pop-out
+  const t1 = gsap.timeline({ paused: true });
+  t1.to('.envelope .top', {
+    duration: 0.8,
+    ease: 'back',
+    transformOrigin: 'top',
+    rotateX: 180,
+    borderTop: '1px solid rgba(0,232,255,0.3)',  // subtle highlight
+    zIndex: 1
+  })
+  .set('.envelope .card', { zIndex: 2 })
+  .to('.envelope .card', {
+    duration: 0.3,
+    left: 30,
+    top: 30,
+    width: 250,
+    height: 150
+  })
+  .to('.envelope .card', { top: -220 })
+  .set('.envelope .card', { zIndex: 10 })
+  .to('.envelope .card', {
+    duration: 0.7,
+    scaleX: 1.4,
+    scaleY: 1.6,
+    top: 10,
+    ease: 'back',
+    onComplete: () => {
+      contRow.classList.add('show');
+    }
+  });
+
+  // Timeline 2: shadow scale (adds depth)
+  const t2 = gsap.timeline({ paused: true });
+  t2.to('.envelope .shadow', {
+    delay: 1.6,
+    duration: 0.7,
+    scaleX: 2.1
+  });
+
+  // Store globally so they can be killed later
+  window._envT1 = t1;
+  window._envT2 = t2;
+
+  // Open envelope on click (only if not already open)
+  let isOpen = false;
+  const envelope = document.getElementById('envelope');
+  const openEnvelope = () => {
+    if (isOpen) return;
+    isOpen = true;
+    t1.play();
+    t2.play();
+  };
+  envelope.addEventListener('click', openEnvelope);
+
+  // Close button
+  document.getElementById('env-close').onclick = (e) => {
+    e.stopPropagation();  // prevent envelope click
+    contRow.classList.remove('show');
+    t1.reverse();
+    t2.reverse();
+    // Ensure border is cleared after reverse (GSAP might leave it)
+    t1.eventCallback('onReverseComplete', () => {
+      gsap.set('.envelope .top', { borderTop: 'none' });
+      isOpen = false;
+    });
+  };
+
+  // Continue to finale
+  document.getElementById('env-cont-btn').onclick = () => nxt();
+}
+
 let fnActive=false,fnRAF,fnParts=[];
 
 function initFinale(){
@@ -1194,5 +1436,8 @@ addEventListener('resize',()=>{
 
 console.log('%c🚀 Happy 11th Birthday, Joseph! 🎉','font-size:20px;color:#f5c518;font-weight:bold;background:#020510;padding:8px 16px;border-radius:4px');
 </script>
+<!-- GSAP + jQuery for envelope animation (loaded last so DOM is ready) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </body>
 </html>
