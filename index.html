@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 <style>
 /* ══════════════════════════════════════════════
-   DESIGN TOKENS (unchanged)
+   DESIGN TOKENS
 ══════════════════════════════════════════════ */
 :root{
   --gold:#f5c518; --gold2:#ffd700; --hot:#ff1a6c; --cyan:#00e8ff;
@@ -128,7 +128,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
   opacity:0;pointer-events:none;animation:iRX var(--t) var(--dl) ease-out infinite}
 @keyframes iRX{0%{transform:translate(-50%,-50%) scale(.05);opacity:.5}100%{transform:translate(-50%,-50%) scale(1);opacity:0}}
 
-/* ══════════ SCENE 1 — CAKE (unchanged) ══════════ */
+/* ══════════ SCENE 1 — CAKE ══════════ */
 #s1{background:radial-gradient(ellipse 130% 85% at 50% 110%,#3d0e00,#1e002a 40%,var(--deep) 72%);overflow:hidden}
 .sspot{position:absolute;bottom:-60px;left:50%;transform:translateX(-50%);
   width:520px;height:220px;background:radial-gradient(ellipse,rgba(255,140,30,.18),transparent 70%);
@@ -211,7 +211,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
 .blow-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent);transform:translateX(-100%);transition:transform .45s}
 .blow-btn:hover::before{transform:translateX(100%)}
 
-/* ══════════ SCENE 2 — BALLOONS (unchanged) ══════════ */
+/* ══════════ SCENE 2 — BALLOONS ══════════ */
 #s2{background:linear-gradient(195deg,#06001a,#140430 45%,#080018 100%)}
 .bal-hdr{position:absolute;top:0;left:0;right:0;height:clamp(110px,18vh,140px);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:12px;z-index:5;pointer-events:none;
   background:linear-gradient(180deg,rgba(0,0,0,.6),transparent)}
@@ -240,7 +240,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
 .nxt-btn.show{opacity:1;pointer-events:all;animation:fadeUp .45s var(--ease) forwards}
 .nxt-btn:hover{background:rgba(0,232,255,.18);box-shadow:0 0 40px rgba(0,232,255,.45);transform:translateX(-50%) scale(1.04)}
 
-/* ══════════ SCENE 3 — FIREWORKS (unchanged) ══════════ */
+/* ══════════ SCENE 3 — FIREWORKS ══════════ */
 #s3{background:#000}
 #fw-c{position:absolute;inset:0;width:100%;height:100%}
 #fw-bloom{position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:screen;filter:blur(10px);opacity:.5;pointer-events:none;z-index:2}
@@ -249,7 +249,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
   color:var(--gold);text-shadow:0 0 28px var(--gold),0 0 55px rgba(245,197,24,.35);letter-spacing:.12em}
 .fw-hnt{font-size:clamp(.58rem,1.1vw,.72rem);letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-top:6px;font-family:'Orbitron',monospace}
 
-/* ══════════ SCENE 4 — ROCKET (unchanged) ══════════ */
+/* ══════════ SCENE 4 — ROCKET ══════════ */
 #s4{background:#000}
 #rk-c{position:absolute;inset:0;width:100%;height:100%}
 #rk-bloom{position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:screen;filter:blur(14px);opacity:.45;pointer-events:none;z-index:2}
@@ -280,7 +280,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
   animation:wPop .7s var(--ease) forwards;text-align:center;padding:0 20px;line-height:1.3}
 @keyframes wPop{from{transform:scale(.35);opacity:0}58%{transform:scale(1.1)}to{transform:scale(1);opacity:1}}
 
-/* ══════════ SCENE 6 — FINALE (unchanged) ══════════ */
+/* ══════════ SCENE 6 — FINALE ══════════ */
 #s6{background:#000;overflow:hidden}
 #fn-c{position:absolute;inset:0;width:100%;height:100%}
 .fn-cnt{position:relative;z-index:5;display:flex;flex-direction:column;align-items:center;text-align:center;gap:11px;padding:20px}
@@ -303,7 +303,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
 .restart-btn:hover{background:rgba(245,197,24,.18);transform:scale(1.05);box-shadow:0 0 36px rgba(245,197,24,.45)}
 
 /* ══════════════════════════════════════════════════
-   SCENE 5 — ENVELOPE  (IMPROVED)
+   SCENE 5 — ENVELOPE  (exact port of reference)
 ══════════════════════════════════════════════════ */
 #s5{
   background:radial-gradient(ellipse 80% 68% at 50% 52%,#080d20,var(--deep) 78%);
@@ -324,135 +324,98 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
   font-weight:700;letter-spacing:.3em;text-transform:uppercase;
   color:rgba(0,232,255,.5);
 }
-/* Responsive scale */
 .env-scale{ transform-origin:top center; }
-@media(max-width:380px){ .env-scale{ transform:scale(.76); } }
-@media(min-width:381px) and (max-width:540px){ .env-scale{ transform:scale(.88); } }
-
-/* ── ENVELOPE  300×200 from reference ── */
+@media(max-width:360px){.env-scale{transform:scale(.72);}}
+@media(min-width:361px) and (max-width:520px){.env-scale{transform:scale(.85);}}
+/* ── THE ENVELOPE  300x200 ── */
 .envelope{
   position:relative;
   background-color:#0c1e3a;
   width:300px;height:200px;
   cursor:pointer;z-index:5;
-  transition:box-shadow 0.3s ease;
+  outline:1.5px solid rgba(0,232,255,.2);
 }
-.envelope:hover{
-  box-shadow:0 0 0 1px rgba(0,232,255,0.3), 0 10px 25px rgba(0,0,0,0.5);
-}
-.envelope::after{
-  content:'';position:absolute;inset:-1px;
-  border:1.5px solid rgba(0,232,255,.22);
-  pointer-events:none;z-index:20;
-}
-
 /* ── CARD ── */
-.envelope .card{
-  display:flex;flex-direction:column;
-  justify-content:center;align-items:center;
+.env-card{
+  display:flex;justify-content:center;align-items:center;flex-direction:column;gap:8px;
   position:relative;top:10px;left:10px;
   background:linear-gradient(150deg,#e8f3ff,#d8ecff);
-  width:280px;height:190px;border-radius:8px;
-  z-index:1;gap:6px;overflow:hidden;
-  box-shadow:0 5px 15px rgba(0,0,0,0.4);
-}
-.envelope .card::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background:repeating-linear-gradient(
-    180deg,transparent,transparent 20px,rgba(0,80,200,.05) 20px,rgba(0,80,200,.05) 21px);
+  width:280px;height:190px;border-radius:8px;z-index:1;
 }
 .env-close{
-  position:absolute;top:8px;right:10px;
-  font-family:'Orbitron',monospace;font-size:16px;font-weight:900;
-  color:rgba(10,40,100,.45);cursor:pointer;
-  background:none;border:none;outline:none;padding:2px 8px;
-  line-height:1;z-index:20;transition:color .15s, background .15s;
-  border-radius:50%;
+  position:absolute;top:10px;right:12px;
+  font-family:'Orbitron',monospace;font-size:13px;font-weight:900;
+  color:rgba(10,40,100,.45);background:none;border:none;outline:none;
+  cursor:pointer;padding:2px 5px;line-height:1;z-index:20;transition:color .15s;
 }
-.env-close:hover{ 
-  color:var(--hot); 
-  background:rgba(255,26,108,0.1);
-}
+.env-close:hover{color:var(--hot);}
 .env-qr-img{
-  display:block;width:120px;height:120px;
-  border-radius:4px;object-fit:contain;
-  position:relative;z-index:1;image-rendering:pixelated;
+  display:block;width:120px;height:120px;border-radius:3px;
+  object-fit:contain;image-rendering:pixelated;image-rendering:crisp-edges;
 }
-/* Improved fallback – stylish QR placeholder */
 .env-qr-fb{
-  width:120px;height:120px;border-radius:4px;
-  background:linear-gradient(145deg,#fff,#eef5ff);
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  position:relative;z-index:1;
-  border:1px dashed rgba(0,100,200,0.3);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,0.6);
+  width:120px;height:120px;border-radius:4px;background:#fff;
+  border:1.5px dashed rgba(0,80,200,.18);
+  display:none;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:6px;
 }
 .env-qr-fb span{
-  font-family:'Orbitron',monospace;font-size:.5rem;
-  letter-spacing:.1em;color:rgba(10,40,100,0.5);text-align:center;padding:4px;
-}
-.env-qr-fb::before{
-  content:'🎁';font-size:32px;opacity:0.7;margin-bottom:4px;
+  font-family:'Orbitron',monospace;font-size:.44rem;letter-spacing:.08em;color:rgba(10,40,100,.4);
 }
 .env-card-label{
-  font-family:'Orbitron',monospace;font-size:.5rem;
-  letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(10,40,100,.45);position:relative;z-index:1;
+  font-family:'Orbitron',monospace;font-size:.48rem;
+  letter-spacing:.16em;text-transform:uppercase;color:rgba(10,40,100,.42);
 }
-
-/* ── FLAPS ── */
-.envelope .top{
+/* ── TOP FLAP  z:10, clips to triangle, rotates on click ── */
+.env-top{
   position:absolute;left:0;top:0;
   background-color:#0f2548;
   width:100%;height:65%;z-index:10;
   clip-path:polygon(0% 0%,50% 100%,100% 0%);
-  box-shadow:inset 0 -1px 0 rgba(0,232,255,.18);
-  transform-origin:top center;  /* for GSAP rotateX */
+  box-shadow:inset 0 -2px 0 rgba(0,232,255,.15);
 }
-.envelope .right{
+/* ── RIGHT / BOTTOM / LEFT  z:5 front panels ── */
+.env-right{
   position:absolute;right:0;top:0;
   background-color:#091a32;
   width:50%;height:100%;z-index:5;
   clip-path:polygon(100% 0%,0% 51%,100% 100%);
 }
-.envelope .bottom{
+.env-bottom{
   position:absolute;bottom:0;left:0;
   background-color:#071526;
   width:100%;height:50%;z-index:5;
   clip-path:polygon(0% 99%,50% 0%,100% 100%);
-  border-bottom:1.5px solid rgba(0,232,255,.2);
+  border-bottom:1.5px solid rgba(0,232,255,.18);
 }
-.envelope .left{
+.env-left{
   position:absolute;top:0;left:0;
   background-color:#091a32;
   width:50%;height:100%;z-index:5;
   clip-path:polygon(0% 0%,100% 50%,0% 101%);
 }
-.envelope .shadow{
+.env-shadow{
   position:absolute;bottom:-100px;left:75px;
   width:150px;height:5px;border-radius:3px;
-  box-shadow:10px 10px 7px rgba(0,232,255,.18);
+  box-shadow:10px 10px 7px rgba(0,232,255,.22);
 }
-
-/* ── Continue button ── */
-.env-cont-row{
-  opacity:0;pointer-events:none;transition:opacity .35s;
-}
-.env-cont-row.show{ opacity:1;pointer-events:all; }
+/* ── CONTINUE BUTTON ── */
+.env-cont-row{opacity:0;pointer-events:none;transition:opacity .35s;}
+.env-cont-row.show{opacity:1;pointer-events:all;}
 .env-cont-btn{
   padding:clamp(8px,1.3vh,11px) clamp(20px,3.5vw,34px);
   font-family:'Orbitron',monospace;
-  font-size:clamp(.6rem,1.1vw,.75rem);font-weight:700;
+  font-size:clamp(.6rem,1.1vw,.76rem);font-weight:700;
   letter-spacing:.14em;text-transform:uppercase;
   border:1.5px solid rgba(0,232,255,.55);border-radius:3px;
-  background:rgba(0,232,255,.08);color:var(--cyan);cursor:pointer;
-  transition:all .22s var(--ease);
+  background:rgba(0,232,255,.08);color:var(--cyan);
+  cursor:pointer;transition:all .22s var(--ease);
   clip-path:polygon(5px 0,100% 0,100% calc(100% - 5px),calc(100% - 5px) 100%,0 100%,0 5px);
 }
 .env-cont-btn:hover{
-  background:rgba(0,232,255,.22);transform:scale(1.05);
+  background:rgba(0,232,255,.22);
   box-shadow:0 0 24px rgba(0,232,255,.45);
+  transform:scale(1.05);
 }
 @media(hover:hover){.rk-ctrl{display:none}}
 @media(hover:none){.rk-ctrl{display:flex}}
@@ -548,7 +511,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
   </div>
 </section>
 
-<!-- ═══ SCENE 5: ENVELOPE / QR (IMPROVED) ═══ -->
+<!-- ═══ SCENE 5: ENVELOPE / QR ═══ -->
 <section class="scene" id="s5">
   <div class="env-wrapper">
 
@@ -557,22 +520,22 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
     <div class="env-scale">
       <div class="envelope" id="envelope">
 
-        <!-- Card: tucked inside, pops out on open -->
-        <div class="card" id="env-card">
+        <!-- Card: position:relative, starts inside, GSAP animates it out -->
+        <div class="env-card" id="env-card">
           <button class="env-close" id="env-close">✕</button>
           <img class="env-qr-img" id="env-qr-img" src="qr.png" alt="QR Code">
           <div class="env-qr-fb" id="env-qr-fb">
-            <span>🎁 Secret Message</span>
+            <span>Place qr.png<br>next to this file</span>
           </div>
           <div class="env-card-label">🚀 &nbsp; Scan Me, Joseph! &nbsp; 🚀</div>
         </div>
 
-        <!-- Flap panels -->
-        <div class="top"></div>
-        <div class="right"></div>
-        <div class="bottom"></div>
-        <div class="left"></div>
-        <div class="shadow"></div>
+        <!-- Flap + side panels (exact structure from reference) -->
+        <div class="env-top"    id="env-top"></div>
+        <div class="env-right"></div>
+        <div class="env-bottom"></div>
+        <div class="env-left"></div>
+        <div class="env-shadow" id="env-shadow"></div>
 
       </div>
     </div>
@@ -601,7 +564,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
 'use strict';
 
 /* ═══════════════════════════════════════════════════
-   CURSOR (unchanged)
+   CURSOR
 ═══════════════════════════════════════════════════ */
 const CUR=document.getElementById('cur'), RING=document.getElementById('cur-ring');
 let mx=innerWidth/2, my=innerHeight/2, rx=mx, ry=my;
@@ -620,7 +583,7 @@ document.addEventListener('mousedown',()=>{CUR.style.transform='translate(-50%,-
 document.addEventListener('mouseup',()=>{CUR.style.transform='translate(-50%,-50%) scale(1)';CUR.style.mixBlendMode='screen'});
 
 /* ═══════════════════════════════════════════════════
-   BACKGROUND PARTICLES (unchanged)
+   BACKGROUND PARTICLES
 ═══════════════════════════════════════════════════ */
 const bgc=document.getElementById('bgc'), bc=bgc.getContext('2d');
 const blm=document.getElementById('bloom-overlay'), blmctx=blm.getContext('2d');
@@ -647,7 +610,7 @@ const bgPts=Array.from({length:90},()=>({x:Math.random()*innerWidth,y:Math.rando
 })();
 
 /* ═══════════════════════════════════════════════════
-   BURST CANVAS — Balloon shards (unchanged)
+   BURST CANVAS — Balloon shards
 ═══════════════════════════════════════════════════ */
 const BRS=document.getElementById('burst-canvas'), BCTX=BRS.getContext('2d');
 function rszBurst(){BRS.width=innerWidth;BRS.height=innerHeight;}
@@ -696,7 +659,7 @@ function burstBalloon(cx,cy,col,col2,sz){
 }
 
 /* ═══════════════════════════════════════════════════
-   SCENE MANAGER (unchanged)
+   SCENE MANAGER
 ═══════════════════════════════════════════════════ */
 const SN=['s0','s1','s2','s3','s4','s5','s6'];
 const MISSIONS=['01','02','03','04','05','06','06'];
@@ -726,7 +689,7 @@ function onEnter(i){
 }
 
 /* ═══════════════════════════════════════════════════
-   HELPERS (unchanged)
+   HELPERS
 ═══════════════════════════════════════════════════ */
 function ripple(x,y){
   const r=document.createElement('div');
@@ -753,7 +716,7 @@ function bigText(msg,col='var(--gold)'){
 }
 
 /* ═══════════════════════════════════════════════════
-   SCENE 0 — INTRO (unchanged)
+   SCENE 0 — INTRO
 ═══════════════════════════════════════════════════ */
 const s0=document.getElementById('s0');
 for(let i=0;i<4;i++){
@@ -766,7 +729,7 @@ s0.addEventListener('click',e=>{ripple(e.clientX,e.clientY);setTimeout(nxt,230);
 s0.style.cursor='pointer';
 
 /* ═══════════════════════════════════════════════════
-   SCENE 1 — CAKE (unchanged)
+   SCENE 1 — CAKE
 ═══════════════════════════════════════════════════ */
 let cndlsBlown=0, cakeTheme=0;
 const CAKE_T=[
@@ -896,7 +859,7 @@ function addDrips(){
 }
 
 /* ═══════════════════════════════════════════════════
-   SCENE 2 — BALLOONS (unchanged)
+   SCENE 2 — BALLOONS
 ═══════════════════════════════════════════════════ */
 const BCOLS=[['#ff1a6c','#ff85a1'],['#8b2be2','#d0a0f0'],['#00e8ff','#80f8ff'],['#f5c518','#ffe99a'],['#00ff88','#80ffba'],['#ff5a00','#ffb380'],['#e040fb','#f090ff'],['#2979ff','#82b1ff'],['#ff4444','#ff8a80']];
 let popCount=0,balInt=null,balFrames={},nxtShown=false;
@@ -973,7 +936,7 @@ document.getElementById('bal-nxt').addEventListener('click',()=>{
 });
 
 /* ═══════════════════════════════════════════════════
-   SCENE 3 — FIREWORKS (unchanged)
+   SCENE 3 — FIREWORKS
 ═══════════════════════════════════════════════════ */
 let fwActive=false,fwParts=[],fwRkts=[],fwRAF;
 
@@ -1024,7 +987,7 @@ function initFireworks(){
 document.getElementById('fw-nxt').addEventListener('click',()=>{fwActive=false;cancelAnimationFrame(fwRAF);nxt();});
 
 /* ═══════════════════════════════════════════════════
-   SCENE 4 — ROCKET GAME (unchanged)
+   SCENE 4 — ROCKET GAME
 ═══════════════════════════════════════════════════ */
 let rkActive=false,rkRAF,rkKeys={},rkStars=[],rkCount=0;
 // Parallax star layers
@@ -1281,117 +1244,100 @@ function drawRocket(ctx,blmCtx,x,y,tilt,vx,boost,t){
 function winRocket(){confetti(140);document.getElementById('win-ov').classList.add('show');}
 
 /* ═══════════════════════════════════════════════════
-   SCENE 5 — ENVELOPE (IMPROVED)
+/* ═══════════════════════════════════════════════════
+   SCENE 5 — ENVELOPE  (exact port of reference code)
+   Reference: gsap timeline t1+t2, jQuery-style click
 ═══════════════════════════════════════════════════ */
-function initEnvelope() {
-  // QR image fallback handling
+function initEnvelope(){
+
+  /* ── QR image / fallback ───────────────────────── */
   const qrImg = document.getElementById('env-qr-img');
   const qrFb  = document.getElementById('env-qr-fb');
-  qrImg.onerror = () => {
-    qrImg.style.display = 'none';
-    qrFb.style.display = 'flex';
-  };
-  // In case the image is already cached and errored
-  if (qrImg.complete && !qrImg.naturalWidth) {
-    qrImg.style.display = 'none';
-    qrFb.style.display = 'flex';
-  }
+  // show fallback if image failed (works for re-entries too)
+  const showFb = () => { qrImg.style.display='none'; qrFb.style.display='flex'; };
+  qrImg.onerror = showFb;
+  if(qrImg.complete && qrImg.naturalWidth === 0){ showFb(); }
 
+  /* ── Reset cont-row ────────────────────────────── */
   const contRow = document.getElementById('env-cont-row');
   contRow.classList.remove('show');
 
-  // Kill any previous GSAP instances to avoid conflicts
-  if (window._envT1) window._envT1.kill();
-  if (window._envT2) window._envT2.kill();
+  /* ── Kill any running timelines from a previous visit ── */
+  if(window._envT1){ window._envT1.kill(); window._envT1 = null; }
+  if(window._envT2){ window._envT2.kill(); window._envT2 = null; }
 
-  // Reset all elements to closed state
-  gsap.set('.envelope .top', {
-    rotateX: 0,
-    zIndex: 10,
-    borderTop: 'none'  // ensure border is removed
-  });
-  gsap.set('.envelope .card', {
-    zIndex: 1,
-    left: 10,
-    top: 10,
-    width: 280,
-    height: 190,
-    scaleX: 1,
-    scaleY: 1
-  });
-  gsap.set('.envelope .shadow', { scaleX: 1 });
+  /* ── Reset all elements to initial closed state ── */
+  gsap.set('#env-top',    { rotateX:0, zIndex:10, clearProps:'borderTop' });
+  gsap.set('#env-card',   { zIndex:1, left:10, top:10, width:280, height:190, scaleX:1, scaleY:1 });
+  gsap.set('#env-shadow', { scaleX:1 });
 
-  // Timeline 1: flap open, card pop-out
+  /* ── Build timelines EXACTLY as reference ────────
+     t1: flap opens → card shrinks → card flies up → card expands
+     t2: shadow stretches (delayed)
+  ─────────────────────────────────────────────── */
   const t1 = gsap.timeline({ paused: true });
-  t1.to('.envelope .top', {
-    duration: 0.8,
-    ease: 'back',
-    transformOrigin: 'top',
-    rotateX: 180,
-    borderTop: '1px solid rgba(0,232,255,0.3)',  // subtle highlight
-    zIndex: 1
-  })
-  .set('.envelope .card', { zIndex: 2 })
-  .to('.envelope .card', {
-    duration: 0.3,
-    left: 30,
-    top: 30,
-    width: 250,
-    height: 150
-  })
-  .to('.envelope .card', { top: -220 })
-  .set('.envelope .card', { zIndex: 10 })
-  .to('.envelope .card', {
-    duration: 0.7,
-    scaleX: 1.4,
-    scaleY: 1.6,
-    top: 10,
-    ease: 'back',
-    onComplete: () => {
-      contRow.classList.add('show');
-    }
-  });
-
-  // Timeline 2: shadow scale (adds depth)
   const t2 = gsap.timeline({ paused: true });
-  t2.to('.envelope .shadow', {
+
+  t1
+    .to('#env-top', {
+      duration: 0.8,
+      ease: 'back',
+      transformOrigin: 'top',
+      rotateX: 180,
+      borderTop: '1px solid rgba(0,232,255,0.35)',
+      zIndex: 1
+    })
+    .set('#env-card', { zIndex: 2 })
+    .to('#env-card', {
+      duration: 0.3,
+      left: 30,
+      top: 30,
+      width: 250,
+      height: 150
+    })
+    .to('#env-card', {
+      top: -220
+    })
+    .set('#env-card', { zIndex: 10 })
+    .to('#env-card', {
+      duration: 0.7,
+      scaleX: 1.4,
+      scaleY: 1.6,
+      top: 10,
+      ease: 'back',
+      onComplete: () => { contRow.classList.add('show'); }
+    });
+
+  t2.to('#env-shadow', {
     delay: 1.6,
     duration: 0.7,
     scaleX: 2.1
   });
 
-  // Store globally so they can be killed later
   window._envT1 = t1;
   window._envT2 = t2;
 
-  // Open envelope on click (only if not already open)
-  let isOpen = false;
+  /* ── Click envelope to OPEN (remove old listener first) ── */
   const envelope = document.getElementById('envelope');
-  const openEnvelope = () => {
-    if (isOpen) return;
-    isOpen = true;
-    t1.play();
-    t2.play();
-  };
-  envelope.addEventListener('click', openEnvelope);
+  // Clone node to wipe all old listeners, then re-append children
+  // (simpler: just use a named handler stored on the element)
+  if(envelope._envClickHandler){
+    envelope.removeEventListener('click', envelope._envClickHandler);
+  }
+  envelope._envClickHandler = () => { t1.play(); t2.play(); };
+  envelope.addEventListener('click', envelope._envClickHandler);
 
-  // Close button
+  /* ── Click ✕ to CLOSE ── */
   document.getElementById('env-close').onclick = (e) => {
-    e.stopPropagation();  // prevent envelope click
+    e.stopPropagation();
     contRow.classList.remove('show');
     t1.reverse();
     t2.reverse();
-    // Ensure border is cleared after reverse (GSAP might leave it)
-    t1.eventCallback('onReverseComplete', () => {
-      gsap.set('.envelope .top', { borderTop: 'none' });
-      isOpen = false;
-    });
   };
 
-  // Continue to finale
+  /* ── Continue → finale ── */
   document.getElementById('env-cont-btn').onclick = () => nxt();
 }
-
 let fnActive=false,fnRAF,fnParts=[];
 
 function initFinale(){
