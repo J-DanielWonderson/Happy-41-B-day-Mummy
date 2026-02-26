@@ -40,15 +40,10 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
 @keyframes cSpark{100%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(0);opacity:0}}
 
 /* ── GLOBAL CANVASES ── */
-#bgc,#bloom-overlay,#burst-canvas,#sparkle-canvas{position:fixed;inset:0;pointer-events:none}
+#bgc,#bloom-overlay,#burst-canvas{position:fixed;inset:0;pointer-events:none}
 #bgc{z-index:0}
 #bloom-overlay{z-index:2;mix-blend-mode:screen;filter:blur(12px);opacity:0.55}
 #burst-canvas{z-index:500}
-#sparkle-canvas{z-index:3}
-.score-popup{position:fixed;pointer-events:none;z-index:600;font-family:"Orbitron",monospace;font-weight:900;font-size:clamp(1rem,2vw,1.5rem);animation:scorePop 1s ease-out forwards}
-@keyframes scorePop{0%{opacity:1;transform:translateY(0) scale(1)}50%{opacity:1;transform:translateY(-30px) scale(1.2)}100%{opacity:0;transform:translateY(-60px) scale(0.8)}}
-.shockwave{position:fixed;pointer-events:none;z-index:500;border-radius:50%;border:2px solid var(--col);animation:shockwaveExpand .6s ease-out forwards}
-@keyframes shockwaveExpand{0%{transform:translate(-50%,-50%) scale(0);opacity:0.8}100%{transform:translate(-50%,-50%) scale(3);opacity:0}}
 
 /* ── SCENES ── */
 .scene{position:fixed;inset:0;z-index:10;display:flex;flex-direction:column;
@@ -435,7 +430,6 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
 <canvas id="bgc"></canvas>
 <canvas id="bloom-overlay"></canvas>
 <canvas id="burst-canvas"></canvas>
-<canvas id="sparkle-canvas"></canvas>
 
 <!-- MISSION COUNTER -->
 <div id="mission-ctr">MISSION <span id="mc-cur">01</span> / 06</div>
@@ -613,123 +607,7 @@ const bgPts=Array.from({length:90},()=>({x:Math.random()*innerWidth,y:Math.rando
     blmctx.fillStyle=`hsla(${p.h},100%,70%,.4)`; blmctx.fill();
   });
   requestAnimationFrame(bgLoop);
-
-/* ═══════════════════════════════════════════════════
-   SPARKLE CANVAS — Floating sparkles layer
- */
-const spkc=document.getElementById("sparkle-canvas"), spctx=spkc.getContext("2d");
-function rszSparkle(){spkc.width=innerWidth;spkc.height=innerHeight;}
-rszSparkle(); addEventListener("resize",rszSparkle);
-let floatingSparkles=Array.from({length:25},()=>({
-  x:Math.random()*innerWidth,y:Math.random()*innerHeight,
-  r:1+Math.random()*2,vx:(Math.random()-.5)*.3,vy:-.2-Math.random()*.4,
-  ph:Math.random()*Math.PI*2,col:["#f5c518","#ff1a6c","#00e8ff","#8b2be2","#00ff88"][Math.floor(Math.random()*5)]
-}));
-(function sparkleLoop(){
-  spctx.clearRect(0,0,spkc.width,spkc.height);
-  floatingSparkles.forEach(s=>{
-    s.x+=s.vx; s.y+=s.vy; s.ph+=.03;
-    if(s.y<-10){s.y=innerHeight+10;s.x=Math.random()*innerWidth;}
-    if(s.x<0)s.x=innerWidth; if(s.x>innerWidth)s.x=0;
-    const a=(Math.sin(s.ph)*.4+.6)*.7;
-    spctx.save(); spctx.globalAlpha=a; spctx.shadowBlur=8; spctx.shadowColor=s.col;
-    spctx.beginPath(); spctx.arc(s.x,s.y,s.r,0,Math.PI*2); spctx.fillStyle=s.col; spctx.fill();
-    spctx.beginPath(); spctx.moveTo(s.x,s.y-s.r*2); spctx.lineTo(s.x+s.r*.7,s.y);
-    spctx.lineTo(s.x,s.y+s.r*2); spctx.lineTo(s.x-s.r*.7,s.y); spctx.closePath(); spctx.fill();
-    spctx.restore();
-  });
-  requestAnimationFrame(sparkleLoop);
 })();
-
-/* ═══════════════════════════════════════════════════
-   HELPER: Score Popup
- */
-function scorePopup(x,y,text,col){
-  const el=document.createElement("div");el.className="score-popup";
-  el.style.cssText="left:"+x+"px;top:"+y+"px;color:"+col+";text-shadow:0 0 10px "+col;
-  el.textContent=text;document.body.appendChild(el);
-  setTimeout(()=>el.remove(),1000);
-}
-
-/* ═══════════════════════════════════════════════════
-   HELPER: Shockwave Ring
- */
-function shockwave(x,y,col){
-  const el=document.createElement("div");el.className="shockwave";
-  el.style.cssText="left:"+x+"px;top:"+y+"px;width:60px;height:60px;--col:"+col;
-  document.body.appendChild(el);setTimeout(()=>el.remove(),600);
-}
-
-/* ═══════════════════════════════════════════════════
-   HELPER: Speed Lines
- */
-function createSpeedLines(x,y,dir){
-  for(let i=0;i<3;i++){
-    const el=document.createElement("div");el.className="speed-line";
-    const len=30+Math.random()*40;
-    el.style.cssText="left:"+(x-20+Math.random()*40)+"px;top:"+(y-15+i*10)+"px;width:"+len+"px;transform:rotate("+(dir>0?0:180)+"deg)";
-    document.body.appendChild(el);setTimeout(()=>el.remove(),300);
-  }
-}
-})();
-
-/* ═══════════════════════════════════════════════════
-   SPARKLE CANVAS — Floating sparkles layer
- */
-const spkc=document.getElementById("sparkle-canvas"), spctx=spkc.getContext("2d");
-function rszSparkle(){spkc.width=innerWidth;spkc.height=innerHeight;}
-rszSparkle(); addEventListener("resize",rszSparkle);
-let floatingSparkles=Array.from({length:25},()=>({
-  x:Math.random()*innerWidth,y:Math.random()*innerHeight,
-  r:1+Math.random()*2,vx:(Math.random()-.5)*.3,vy:-.2-Math.random()*.4,
-  ph:Math.random()*Math.PI*2,col:["#f5c518","#ff1a6c","#00e8ff","#8b2be2","#00ff88"][Math.floor(Math.random()*5)]
-}));
-(function sparkleLoop(){
-  spctx.clearRect(0,0,spkc.width,spkc.height);
-  floatingSparkles.forEach(s=>{
-    s.x+=s.vx; s.y+=s.vy; s.ph+=.03;
-    if(s.y<-10){s.y=innerHeight+10;s.x=Math.random()*innerWidth;}
-    if(s.x<0)s.x=innerWidth; if(s.x>innerWidth)s.x=0;
-    const a=(Math.sin(s.ph)*.4+.6)*.7;
-    spctx.save(); spctx.globalAlpha=a; spctx.shadowBlur=8; spctx.shadowColor=s.col;
-    spctx.beginPath(); spctx.arc(s.x,s.y,s.r,0,Math.PI*2); spctx.fillStyle=s.col; spctx.fill();
-    spctx.beginPath(); spctx.moveTo(s.x,s.y-s.r*2); spctx.lineTo(s.x+s.r*.7,s.y);
-    spctx.lineTo(s.x,s.y+s.r*2); spctx.lineTo(s.x-s.r*.7,s.y); spctx.closePath(); spctx.fill();
-    spctx.restore();
-  });
-  requestAnimationFrame(sparkleLoop);
-})();
-
-/* ═══════════════════════════════════════════════════
-   HELPER: Score Popup
- */
-function scorePopup(x,y,text,col){
-  const el=document.createElement("div");el.className="score-popup";
-  el.style.cssText="left:"+x+"px;top:"+y+"px;color:"+col+";text-shadow:0 0 10px "+col;
-  el.textContent=text;document.body.appendChild(el);
-  setTimeout(()=>el.remove(),1000);
-}
-
-/* ═══════════════════════════════════════════════════
-   HELPER: Shockwave Ring
- */
-function shockwave(x,y,col){
-  const el=document.createElement("div");el.className="shockwave";
-  el.style.cssText="left:"+x+"px;top:"+y+"px;width:60px;height:60px;--col:"+col;
-  document.body.appendChild(el);setTimeout(()=>el.remove(),600);
-}
-
-/* ═══════════════════════════════════════════════════
-   HELPER: Speed Lines
- */
-function createSpeedLines(x,y,dir){
-  for(let i=0;i<3;i++){
-    const el=document.createElement("div");el.className="speed-line";
-    const len=30+Math.random()*40;
-    el.style.cssText="left:"+(x-20+Math.random()*40)+"px;top:"+(y-15+i*10)+"px;width:"+len+"px;transform:rotate("+(dir>0?0:180)+"deg)";
-    document.body.appendChild(el);setTimeout(()=>el.remove(),300);
-  }
-}
 
 /* ═══════════════════════════════════════════════════
    BURST CANVAS — Balloon shards
@@ -859,19 +737,9 @@ const CAKE_T=[
   {t:'#6b3a2a',m:'#8b5a3c',b:'#4a2518'},
   {t:'#1a5fa0',m:'#0e8ca8',b:'#0c4478'},
   {t:'#7a2ba0',m:'#9a40b8',b:'#5a1880'},
-  {t:'#1a1a3a',m:'#2a1a4a',b:'#0a0a2a'},
-  {t:'#ff3366',m:'#ff6633',b:'#ff9933'},
-  {t:'#6b3a2a',m:'#8b5a3c',b:'#4a2518'},
-  {t:'#1a5fa0',m:'#0e8ca8',b:'#0c4478'},
-  {t:'#7a2ba0',m:'#9a40b8',b:'#5a1880'},
 ];
 const FROST_T=[
   ['#fff8ee','#fff0d0','#fff8ee'],
-  ['#ffe4b5','#deb887','#f4a460'],
-  ['#e0f4ff','#b8e8f8','#cce8ff'],
-  ['#f5e0ff','#e8c8ff','#f0d8ff'],
-  ['#c8c8ff','#b0b0ff','#d0d0ff'],
-  ['#ffe0e0','#ffd0d0','#fff0d0'],
   ['#ffe4b5','#deb887','#f4a460'],
   ['#e0f4ff','#b8e8f8','#cce8ff'],
   ['#f5e0ff','#e8c8ff','#f0d8ff'],
@@ -953,8 +821,8 @@ document.getElementById('blow-btn').addEventListener('click',blowAll);
 document.getElementById('ck-w').addEventListener('dblclick',()=>{
   cakeTheme=(cakeTheme+1)%CAKE_T.length;
   applyTheme();addSprinkles();addDrips();
-  bigText(['PINK VELVET','CHOCOLATE FUDGE','OCEAN BLUE','LAVENDER DREAM','GALAXY SWIRL','RAINBOW EXPLOSION'][cakeTheme],
-          ['#ff9ab0','#c8a070','#00e5ff','#ce93d8','#8080ff','#ff8080'][cakeTheme]);
+  bigText(['PINK VELVET','CHOCOLATE FUDGE','OCEAN BLUE','LAVENDER DREAM'][cakeTheme],
+          ['#ff9ab0','#c8a070','#00e5ff','#ce93d8'][cakeTheme]);
 });
 
 function applyTheme(){
@@ -1050,10 +918,8 @@ function spawnBalloon(){
     delete balFrames[id];
     const rect=b.getBoundingClientRect();
     burstBalloon(rect.left+rect.width/2,rect.top+rect.height/2,c1,c2,sz);
-    shockwave(rect.left+rect.width/2,rect.top+rect.height/2,c1);
     b.remove();shadowEl.remove();
     popCount++;
-    scorePopup(rect.left+rect.width/2,rect.top,"+1",c1);
     document.getElementById('pop-ctr').textContent=`🎈  POPPED: ${String(popCount).padStart(2,'0')}`;
     if(popCount===10)bigText('🔥  ON FIRE, JOSEPH!','var(--hot)');
     if(popCount>=15&&!nxtShown){nxtShown=true;document.getElementById('bal-nxt').classList.add('show');}
