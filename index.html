@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Happy 11th Birthday, Joseph! 🚀</title>
+<title>Happy 41st Birthday, Mummy! 🚀</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 <style>
 /* ══════════════════════════════════════════════
@@ -448,13 +448,13 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
   <div class="pd" data-i="3"></div>
   <div class="pd" data-i="4"></div>
   <div class="pd" data-i="5"></div>
-  <span class="pd-label">JOSEPH · BDAY XI</span>
+  <span class="pd-label">MUMMY · BDAY 41</span>
 </div>
 
 <!-- ═══ SCENE 0: INTRO ═══ -->
 <section class="scene enter" id="s0">
-  <div class="n-name">Joseph Wordson</div>
-  <div class="n11 glitch">11</div>
+  <div class="n-name">MUMMY</div>
+  <div class="n11 glitch">41</div>
   <div class="n-sub">Years &nbsp;·&nbsp; Birthday &nbsp;·&nbsp; Unlocked</div>
   <div class="tap-h">Tap to Begin</div>
 </section>
@@ -462,7 +462,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
 <!-- ═══ SCENE 1: CAKE ═══ -->
 <section class="scene" id="s1">
   <div class="sspot"></div><div class="sfloor"></div>
-  <p class="wish">Blow it... Joseph…</p>
+  <p class="wish">Blow it... Mummy…</p>
   <div class="c-stage">
     <div class="ck-w" id="ck-w">
       <div class="c-row" id="c-row"></div>
@@ -533,7 +533,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
           <div class="env-qr-fb" id="env-qr-fb">
             <span>Place qr.png<br>next to this file</span>
           </div>
-          <div class="env-card-label">🚀 &nbsp; Scan Me, Joseph! &nbsp; 🚀</div>
+          <div class="env-card-label">🚀 &nbsp; Scan Me, Mummy! &nbsp; 🚀</div>
         </div>
 
         <!-- Flap + side panels (exact structure from reference) -->
@@ -558,10 +558,10 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;
   <canvas id="fn-c"></canvas>
   <div class="fn-cnt">
     <div class="fn-badge">✦ &nbsp; BIRTHDAY PROTOCOL &nbsp; ✦</div>
-    <div class="fn-name">Joseph</div>
-    <div class="fn-ttl"><span>Happy 11th Birthday!</span></div>
-    <div class="fn-num">11</div>
-    <div class="fn-sub">Achievement Unlocked &nbsp;·&nbsp; Level XI</div>
+    <div class="fn-name">Mummy</div>
+    <div class="fn-ttl"><span>Happy 41st Birthday!</span></div>
+    <div class="fn-num">41</div>
+    <div class="fn-sub">Achievement Unlocked &nbsp;·&nbsp; Level 41</div>
     <button class="restart-btn" id="restart-btn">↺ &nbsp; RESTART MISSION</button>
   </div>
 </section>
@@ -946,7 +946,7 @@ function blowOne(i){
 function blowAll(){for(let i=0;i<3;i++)setTimeout(()=>blowOne(i),i*210);}
 function allBlown(){
   clearInterval(waxInterval);
-  confetti(210);bigText('🎂 HAPPY BIRTHDAY, JOSEPH! 🎂');
+  confetti(210);bigText('🎂 HAPPY BIRTHDAY, MUMMY! 🎂');
   setTimeout(nxt,3100);
 }
 document.getElementById('blow-btn').addEventListener('click',blowAll);
@@ -1055,7 +1055,7 @@ function spawnBalloon(){
     popCount++;
     scorePopup(rect.left+rect.width/2,rect.top,"+1",c1);
     document.getElementById('pop-ctr').textContent=`🎈  POPPED: ${String(popCount).padStart(2,'0')}`;
-    if(popCount===10)bigText('🔥  ON FIRE, JOSEPH!','var(--hot)');
+    if(popCount===10)bigText('🔥  ON FIRE, MUMMY!','var(--hot)');
     if(popCount>=15&&!nxtShown){nxtShown=true;document.getElementById('bal-nxt').classList.add('show');}
   };
   b.addEventListener('click',pop);
@@ -1514,7 +1514,7 @@ addEventListener('resize',()=>{
   ['fw-c','fw-bloom','rk-c','rk-bloom','fn-c'].forEach(id=>{const c=document.getElementById(id);if(c){c.width=innerWidth;c.height=innerHeight;}});
 });
 
-console.log('%c🚀 Happy 11th Birthday, Joseph! 🎉','font-size:20px;color:#f5c518;font-weight:bold;background:#020510;padding:8px 16px;border-radius:4px');
+console.log('%c🚀 Happy 41st Birthday, Mummy! 🎉','font-size:20px;color:#f5c518;font-weight:bold;background:#020510;padding:8px 16px;border-radius:4px');
 </script>
 <!-- GSAP + jQuery for envelope animation (loaded last so DOM is ready) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
